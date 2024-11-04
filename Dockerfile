@@ -1,20 +1,20 @@
 # Используйте официальный образ Node.js в качестве базового
-FROM node:18
+FROM node
 
 # Установите рабочую директорию
-WORKDIR ./app
+WORKDIR /app
 
 # Копируйте package.json и package-lock.json
-COPY package*.json ./
+COPY package.json /app
 
 # Установите зависимости
 RUN npm install
 
 # Копируйте исходный код приложения
-COPY . .
+COPY . /app
 
 # Экспортируйте порт, который будет использовать приложение
 EXPOSE 3000
 
 # Запустите приложение
-CMD ["npm", "start"]
+CMD ["node", "app.js"]
