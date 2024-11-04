@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "express": "^4.21.1",
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0"
+  },
+  "name": "jenks",
+  "description": "HEllo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jar4ikm/jenks.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jar4ikm/jenks/issues"
+  },
+  "homepage": "https://github.com/Jar4ikm/jenks#readme"
+}
