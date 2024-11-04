@@ -12,13 +12,13 @@ pipeline {
         stage('Запуск тестов') {
             steps {
                 script {
-sh '''
+		sh '''
                         # Download and install NVM
                         curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 
                         # Source NVM script to add `nvm` command to the shell
                         export NVM_DIR="$HOME/.nvm"
-                        [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" 
+                        [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" 
 
                         # Install and use Node.js version 14
                         nvm install 14
