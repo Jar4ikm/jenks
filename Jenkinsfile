@@ -12,7 +12,7 @@ pipeline {
         stage('Запуск тестов') {
             steps {
                 script {
-		sh 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bashsource ~/.nvm/nvm.sh'
+		sh 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | source ~/.nvm/nvm.sh'
 		sh 'nvm install 14'
 		sh 'nvm use 14'
 		sh 'node -v'
