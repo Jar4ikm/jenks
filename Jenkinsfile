@@ -12,6 +12,7 @@ pipeline {
         stage('Запуск тестов') {
             steps {
                 script {
+		sh 'node -v'
                     sh 'npm test'
                 }
             }
