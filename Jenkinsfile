@@ -12,13 +12,26 @@ pipeline {
         stage('Запуск тестов') {
             steps {
                 script {
-		sh 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash'
-		sh 'source ~/.nvm/nvm.sh'
-		sh 'nvm install 14'
-		sh 'nvm use 14'
-		sh 'node -v'
-                    sh 'npm test'
-                }
+sh '''
+                        # Download and install NVM
+                        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+
+                        # Source NVM script to add `nvm` command to the shell
+                        export NVM_DIR="$HOME/.nvm"
+                        [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" 
+
+                        # Install and use Node.js version 14
+                        nvm install 14
+                        nvm use 14
+
+                        # Verify the Node.js and npm versions
+                        node -v
+                        npm -v
+
+                        # Install dependencies and run tests
+                        npm install
+                        npm test
+                    '''                }
             }
         }
         stage('Загрузка в Docker Hub') {
