@@ -29,7 +29,7 @@ pipeline {
                         npm -v
 
                         # Install dependencies and run tests
-                        npm install
+                       
                         npm test
                     '''                }
             }
